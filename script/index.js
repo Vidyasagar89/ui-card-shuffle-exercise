@@ -1,4 +1,3 @@
-//TODO - aria-pressed
 
 const cardColors = {
   blueSecondary: "#6F98A8",
@@ -43,6 +42,7 @@ const renderSuffledCards = () => {
     .join("");
 };
 
+// Event Listeners
 window.addEventListener("load", renderSortedCards);
 sortButton.addEventListener("click", renderSortedCards);
 suffleButton.addEventListener("click", renderSuffledCards);
