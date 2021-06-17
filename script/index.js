@@ -1,4 +1,3 @@
-
 const cardColors = {
   blueSecondary: "#6F98A8",
   bluePrimary: "#2B8EAD",
@@ -25,6 +24,7 @@ const suffleButton = document.getElementById("suffle");
 
 const renderSortedCards = () => {
   cardParent.innerHTML = cards
+    .sort((first, second) => first.text - second.text)
     .map(
       ({ text, color }) =>
         `<div class="card" data-color="${color}" >${text}</div>`
@@ -33,7 +33,7 @@ const renderSortedCards = () => {
 };
 
 const renderSuffledCards = () => {
-  cardParent.innerHTML = [...cards]
+  cardParent.innerHTML = cards
     .sort(() => Math.random() - 0.5)
     .map(
       ({ text, color }) =>
